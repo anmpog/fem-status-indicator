@@ -4,6 +4,7 @@
   "description": "A simple app for tracking current use of FEM account",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "normalize.css": "^8.0.1"
   },
