@@ -12,7 +12,7 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js -e html,css,js"
   },
   "author": "Anthony Pogliano",
   "license": "ISC"
