@@ -7,13 +7,14 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "mongodb": "^3.3.0",
+    "mongoose": "^5.6.9",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "dev": "nodemon index.js -e html,css,js"
+    "dev": "nodemon app.js -e html,css,js"
   },
   "author": "Anthony Pogliano",
   "license": "ISC"
