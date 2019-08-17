@@ -1,7 +1,6 @@
 const anthony = document.querySelector('.anthony')
 const miles = document.querySelector('.miles')
 const none = document.querySelector('.none')
-const serverURL = 'http://localhost:3000/test'
 
 
 
@@ -10,7 +9,7 @@ window.onload = () => {
 }
 
 const pageLoadSetState = () => {
-  fetch(serverURL, {
+  fetch('http://localhost:3000/page-load', {
       method: 'GET',
       mode: 'cors',
       credentials: 'same-origin'
@@ -23,7 +22,7 @@ const pageLoadSetState = () => {
 }
 
 const manualStateUpdate = (updatedUser) => {
-  fetch(serverURL, {
+  fetch('http://localhost:3000/manual-update', {
       method: 'PUT',
       mode: 'cors',
       credentials: 'same-origin',
