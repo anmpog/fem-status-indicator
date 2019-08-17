@@ -3,7 +3,7 @@ const miles = document.querySelector('.miles')
 const none = document.querySelector('.none')
 const serverURL = 'http://localhost:3000/test'
 
-let currentUser = undefined
+
 
 window.onload = () => {
   pageLoadSetState()
@@ -17,17 +17,15 @@ const pageLoadSetState = () => {
     })
     .then(response => response.json())
     .then(data => {
-      currentUser = data[0]
-      setBackgroundColor(currentUser.user)
+      setBackgroundColor(data[0].user)
     })
     .catch(err => console.log('Error fetching user on page load: ', err))
 }
 
 const manualStateUpdate = (updatedUser) => {
-  console.log('Updated User passed to manual update func: ', updatedUser)
   fetch(serverURL, {
       method: 'PUT',
-      // mode: 'cors',
+      mode: 'cors',
       credentials: 'same-origin',
       body: JSON.stringify({ user: updatedUser }),
       headers: {
@@ -35,16 +33,12 @@ const manualStateUpdate = (updatedUser) => {
       }
     })
     .then(response => {
-      console.log('Response: ', response)
       return response.json()
     })
     .then(data => {
-      console.log('Flarble: ', data)
-      currentUser = data[0]
-      console.log('current User: ', currentUser)
-      setBackgroundColor(currentUser.user)
+      setBackgroundColor(data.user)
     })
-    .catch(err => console.log('Error updating current user: ', err.message))
+    .catch(err => console.error('Error manually updating user: ', err))
 }
 
 function setBackgroundColor(user) {
@@ -74,19 +68,13 @@ function setBackgroundColor(user) {
 }
 
 anthony.addEventListener('click', (e) => {
-  // console.log(e.target.className)
   manualStateUpdate(e.target.className)
-  setBackgroundColor(e.target.className)
 })
 
 miles.addEventListener('click', (e) => {
-  // console.log(e.target.className)
   manualStateUpdate(e.target.className)
-  setBackgroundColor(e.target.className)
 })
 
 none.addEventListener('click', (e) => {
-  // console.log(e.target.className)
   manualStateUpdate(e.target.className)
-  setBackgroundColor(e.target.className)
 })
