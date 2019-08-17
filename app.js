@@ -13,7 +13,7 @@ app.use(express.json())
 
 
 // Routes
-app.get('/test', async (req, res) => {
+app.get('/page-load', async (req, res) => {
   try {
     const currentUser = await State.find()
     res.send(currentUser)
@@ -24,7 +24,7 @@ app.get('/test', async (req, res) => {
   }
 })
 
-app.put('/test', async (req, res) => {
+app.put('/manual-update', async (req, res) => {
   // Store new user from request
   // Get 'current user' value from DB and store in var
   // Use updateOne() to pass new user string value 
