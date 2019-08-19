@@ -16,7 +16,6 @@ const pageLoadSetState = () => {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Data: ', data)
       setBackgroundColor(data[0].user)
     })
     .catch(err => console.log('Error fetching user on page load: ', err))
