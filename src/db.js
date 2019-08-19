@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const MONGODB_URL_DEV = 'mongodb://localhost:27017/fem-state-db'
 
-mongoose.connect(process.env.MONGODB_URL, {
+mongoose.connect(process.env.MONGODB_URL || MONGODB_URL_DEV, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
