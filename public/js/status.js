@@ -43,24 +43,24 @@ const manualStateUpdate = (updatedUser) => {
 function setBackgroundColor(user) {
   switch (user) {
     case 'anthony':
-      anthony.style.backgroundColor = "green"
+      anthony.style.backgroundColor = "#ffe66d"
       miles.style.backgroundColor = "#ddd"
       none.style.backgroundColor = "#ddd"
       return
     case 'miles':
       anthony.style.backgroundColor = "#ddd"
-      miles.style.backgroundColor = "green"
+      miles.style.backgroundColor = "#ffe66d"
       none.style.backgroundColor = "#ddd"
       return
     case 'none':
       anthony.style.backgroundColor = "#ddd"
       miles.style.backgroundColor = "#ddd"
-      none.style.backgroundColor = "green"
+      none.style.backgroundColor = "#ffe66d"
       return
     default:
       anthony.style.backgroundColor = "#ddd"
       miles.style.backgroundColor = "#ddd"
-      none.style.backgroundColor = "green"
+      none.style.backgroundColor = "#ffe66d"
       return
   }
 }
