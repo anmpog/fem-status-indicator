@@ -9,7 +9,7 @@ window.onload = () => {
 }
 
 const pageLoadSetState = () => {
-  fetch('http://localhost:3000/page-load', {
+  fetch('/page-load', {
       method: 'GET',
       mode: 'cors',
       credentials: 'same-origin'
@@ -22,7 +22,7 @@ const pageLoadSetState = () => {
 }
 
 const manualStateUpdate = (updatedUser) => {
-  fetch('http://localhost:3000/manual-update', {
+  fetch('/manual-update', {
       method: 'PUT',
       mode: 'cors',
       credentials: 'same-origin',
@@ -62,7 +62,6 @@ function setBackgroundColor(user) {
       miles.style.backgroundColor = "#ddd"
       none.style.backgroundColor = "green"
       return
-
   }
 }
 
