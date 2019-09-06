@@ -4,38 +4,21 @@ const none = document.querySelector('.none')
 
 
 
-window.onload = () => {
-  pageLoadSetState()
-}
-
-const pageLoadSetState = () => {
-  fetch('/page-load', {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'same-origin'
-    })
-    .then(response => response.json())
-    .then(data => {
-      setBackgroundColor(data[0].user)
-    })
-    .catch(err => console.log('Error fetching user on page load: ', err))
-}
-
 const manualStateUpdate = (updatedUser) => {
   fetch('/manual-update', {
       method: 'PUT',
       mode: 'cors',
       credentials: 'same-origin',
-      body: JSON.stringify({ user: updatedUser }),
+      body: JSON.stringify({
+        newUser: updatedUser
+      }),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => {
-      return response.json()
-    })
+    .then(response => response.json())
     .then(data => {
-      setBackgroundColor(data.user)
+      setBackgroundColor(data.newUser)
     })
     .catch(err => console.error('Error manually updating user: ', err))
 }
@@ -64,6 +47,21 @@ function setBackgroundColor(user) {
       return
   }
 }
+
+window.onload = () => {
+  fetch('/page-load', {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'same-origin'
+    })
+    .then(response =>
+      response.json())
+    .then(data => {
+      setBackgroundColor(data.currentUser)
+    })
+    .catch(err => console.log('Error fetching user on page load: ', err))
+}
+
 
 anthony.addEventListener('click', (e) => {
   manualStateUpdate(e.target.className)
