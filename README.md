@@ -8,10 +8,10 @@ command is:
 
 `brew install node`
 
-After installing node and downloading this project, navigate to directory and run `NPM install` in 
-project root. After dependencies are downloaded/installed, run command "npm run dev" to start app locally.
+After installing node and downloading this project, navigate to directory and run `npm install` in 
+project root. After dependencies are downloaded/installed, run command `npm run dev` to start app locally.
 
-You will also need to run mongodb server using the `mongod` daemon:
+You will also need to run mongodb server locally using the `mongod` daemon:
 `mongod --dbpath=/data`
 (In my home directory on my machine, I have a directory `.mongodb-data` that stores my databases - so 
 I run the command `mongod --dbpath ~/.mongodb-data` to run my mongodb server locally.) The mongodb client
